@@ -1,0 +1,6 @@
+framework module Pods_TrailSourceUITests {
+  umbrella header "Pods-TrailSourceUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

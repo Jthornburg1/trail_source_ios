@@ -6,6 +6,7 @@ target 'TrailSource' do
   use_frameworks!
 
   # Pods for TrailSource
+  pod 'GooglePlaces'
 
   target 'TrailSourceTests' do
     inherit! :search_paths
