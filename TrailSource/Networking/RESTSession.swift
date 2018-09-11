@@ -16,7 +16,7 @@ struct RESTSession {
         self.request = request
     }
     
-    mutating func asyncRequest(handler: @escaping (Data?, Error?) -> ()) {
+    func asyncRequest(handler: @escaping (Data?, Error?) -> ()) {
         
         let session = URLSession.shared
         let task = session.dataTask(with: request) { (data, response, error) in

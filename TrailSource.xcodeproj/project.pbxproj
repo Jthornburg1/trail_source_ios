@@ -8,16 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A55C355DCD8770E712961F5F /* Pods_TrailSourceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A194BC662B4B13593A2BAC5 /* Pods_TrailSourceUITests.framework */; };
+		B160A98C21481172007D8EF5 /* TrailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160A98B21481172007D8EF5 /* TrailViewModel.swift */; };
+		B160A98E2148151C007D8EF5 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160A98D2148151C007D8EF5 /* RequestFactory.swift */; };
 		B1D72179213A1DA5000A8612 /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D72178213A1DA5000A8612 /* Trail.swift */; };
 		B1D7217B213A22D5000A8612 /* RESTSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7217A213A22D5000A8612 /* RESTSession.swift */; };
-		B1D7217E213AF3B5000A8612 /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7217D213AF3B5000A8612 /* EndpointProtocol.swift */; };
-		B1D72181213AF615000A8612 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D72180213AF615000A8612 /* HTTPMethod.swift */; };
-		B1D72183213AF689000A8612 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D72182213AF689000A8612 /* HTTPTask.swift */; };
-		B1D72186213AF7BA000A8612 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D72185213AF7BA000A8612 /* ParameterEncoding.swift */; };
-		B1D72188213B301D000A8612 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D72187213B301D000A8612 /* URLParameterEncoder.swift */; };
-		B1D7218A213B61B7000A8612 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D72189213B61B7000A8612 /* JSONParameterEncoder.swift */; };
-		B1D7218C213B66B8000A8612 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7218B213B66B8000A8612 /* NetworkRouter.swift */; };
-		B1D7218E213B6EC1000A8612 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7218D213B6EC1000A8612 /* Router.swift */; };
 		B1E1ACFE2136D9A400228874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1ACFD2136D9A400228874 /* AppDelegate.swift */; };
 		B1E1AD002136D9A400228874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1ACFF2136D9A400228874 /* ViewController.swift */; };
 		B1E1AD032136D9A400228874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E1AD012136D9A400228874 /* Main.storyboard */; };
@@ -55,16 +49,10 @@
 		7A194BC662B4B13593A2BAC5 /* Pods_TrailSourceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailSourceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FFCC6570CB460CE9B6D191 /* Pods-TrailSource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailSource.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrailSource/Pods-TrailSource.debug.xcconfig"; sourceTree = "<group>"; };
 		A1D511B0310AFA1F0F06C545 /* Pods-TrailSourceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailSourceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailSourceTests/Pods-TrailSourceTests.release.xcconfig"; sourceTree = "<group>"; };
+		B160A98B21481172007D8EF5 /* TrailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailViewModel.swift; sourceTree = "<group>"; };
+		B160A98D2148151C007D8EF5 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		B1D72178213A1DA5000A8612 /* Trail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
 		B1D7217A213A22D5000A8612 /* RESTSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTSession.swift; sourceTree = "<group>"; };
-		B1D7217D213AF3B5000A8612 /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
-		B1D72180213AF615000A8612 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		B1D72182213AF689000A8612 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
-		B1D72185213AF7BA000A8612 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
-		B1D72187213B301D000A8612 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
-		B1D72189213B61B7000A8612 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
-		B1D7218B213B66B8000A8612 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
-		B1D7218D213B6EC1000A8612 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B1E1ACFA2136D9A400228874 /* TrailSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E1ACFD2136D9A400228874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E1ACFF2136D9A400228874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +111,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B160A98A2148115F007D8EF5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B160A98B21481172007D8EF5 /* TrailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		B1D72177213A1D7D000A8612 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,33 +130,10 @@
 		B1D7217C213AF375000A8612 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				B1D72184213AF7A0000A8612 /* Encoding */,
-				B1D7217F213AF5EA000A8612 /* Service */,
 				B1D7217A213A22D5000A8612 /* RESTSession.swift */,
+				B160A98D2148151C007D8EF5 /* RequestFactory.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		B1D7217F213AF5EA000A8612 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				B1D7217D213AF3B5000A8612 /* EndpointProtocol.swift */,
-				B1D72180213AF615000A8612 /* HTTPMethod.swift */,
-				B1D72182213AF689000A8612 /* HTTPTask.swift */,
-				B1D7218B213B66B8000A8612 /* NetworkRouter.swift */,
-				B1D7218D213B6EC1000A8612 /* Router.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		B1D72184213AF7A0000A8612 /* Encoding */ = {
-			isa = PBXGroup;
-			children = (
-				B1D72185213AF7BA000A8612 /* ParameterEncoding.swift */,
-				B1D72187213B301D000A8612 /* URLParameterEncoder.swift */,
-				B1D72189213B61B7000A8612 /* JSONParameterEncoder.swift */,
-			);
-			path = Encoding;
 			sourceTree = "<group>";
 		};
 		B1E1ACF12136D9A400228874 = {
@@ -188,6 +161,7 @@
 		B1E1ACFC2136D9A400228874 /* TrailSource */ = {
 			isa = PBXGroup;
 			children = (
+				B160A98A2148115F007D8EF5 /* ViewModels */,
 				B1D7217C213AF375000A8612 /* Networking */,
 				B1D72177213A1D7D000A8612 /* Models */,
 				B1E1ACFD2136D9A400228874 /* AppDelegate.swift */,
@@ -443,20 +417,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B160A98E2148151C007D8EF5 /* RequestFactory.swift in Sources */,
 				B1D7217B213A22D5000A8612 /* RESTSession.swift in Sources */,
-				B1D72188213B301D000A8612 /* URLParameterEncoder.swift in Sources */,
 				B1E1AD002136D9A400228874 /* ViewController.swift in Sources */,
-				B1D72186213AF7BA000A8612 /* ParameterEncoding.swift in Sources */,
+				B160A98C21481172007D8EF5 /* TrailViewModel.swift in Sources */,
 				B1D72179213A1DA5000A8612 /* Trail.swift in Sources */,
-				B1D72183213AF689000A8612 /* HTTPTask.swift in Sources */,
 				B1E1AD062136D9A400228874 /* TrailSource.xcdatamodeld in Sources */,
-				B1D72181213AF615000A8612 /* HTTPMethod.swift in Sources */,
-				B1D7218C213B66B8000A8612 /* NetworkRouter.swift in Sources */,
-				B1D7218A213B61B7000A8612 /* JSONParameterEncoder.swift in Sources */,
-				B1D7218E213B6EC1000A8612 /* Router.swift in Sources */,
 				B1E1ACFE2136D9A400228874 /* AppDelegate.swift in Sources */,
 				B1E1AD2F2136DA4400228874 /* Constants.swift in Sources */,
-				B1D7217E213AF3B5000A8612 /* EndpointProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

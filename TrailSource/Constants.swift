@@ -13,4 +13,8 @@ struct Constants {
     public static let googleKey = "AIzaSyAnZCCdKFXkKMIseBNdRyA84pZAZg_lP3k"
     public static let trailsProdKey = "iyYnWzwQfgmshFvRxdrIIVrmUzT9p1RXWvSjsnVjcTqQTigkyp"
     public static let trailsDebugKey = "TCC6fBQ5oKmshU5SEQXCiEXKvESBp1Z8CcGjsn14vW0Zm5XxNo"
+    
+    struct endpoints {
+        var trailsByCoordinate = "https://trailapi-trailapi.p.mashape.com/?lat=%d&long=%d"
+    }
 }
