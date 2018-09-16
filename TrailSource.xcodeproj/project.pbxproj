@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		A55C355DCD8770E712961F5F /* Pods_TrailSourceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A194BC662B4B13593A2BAC5 /* Pods_TrailSourceUITests.framework */; };
 		B160A98C21481172007D8EF5 /* TrailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160A98B21481172007D8EF5 /* TrailViewModel.swift */; };
-		B160A98E2148151C007D8EF5 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160A98D2148151C007D8EF5 /* RequestFactory.swift */; };
 		B1714217214D5E240020E6A4 /* TrailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1714215214D5E240020E6A4 /* TrailCell.swift */; };
 		B1714218214D5E240020E6A4 /* TrailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1714216214D5E240020E6A4 /* TrailCell.xib */; };
 		B1D72179213A1DA5000A8612 /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D72178213A1DA5000A8612 /* Trail.swift */; };
-		B1D7217B213A22D5000A8612 /* RESTSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7217A213A22D5000A8612 /* RESTSession.swift */; };
 		B1E1ACFE2136D9A400228874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1ACFD2136D9A400228874 /* AppDelegate.swift */; };
 		B1E1AD002136D9A400228874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1ACFF2136D9A400228874 /* ViewController.swift */; };
 		B1E1AD032136D9A400228874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E1AD012136D9A400228874 /* Main.storyboard */; };
@@ -52,11 +50,9 @@
 		86FFCC6570CB460CE9B6D191 /* Pods-TrailSource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailSource.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrailSource/Pods-TrailSource.debug.xcconfig"; sourceTree = "<group>"; };
 		A1D511B0310AFA1F0F06C545 /* Pods-TrailSourceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailSourceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailSourceTests/Pods-TrailSourceTests.release.xcconfig"; sourceTree = "<group>"; };
 		B160A98B21481172007D8EF5 /* TrailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailViewModel.swift; sourceTree = "<group>"; };
-		B160A98D2148151C007D8EF5 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		B1714215214D5E240020E6A4 /* TrailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailCell.swift; sourceTree = "<group>"; };
 		B1714216214D5E240020E6A4 /* TrailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailCell.xib; sourceTree = "<group>"; };
 		B1D72178213A1DA5000A8612 /* Trail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
-		B1D7217A213A22D5000A8612 /* RESTSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTSession.swift; sourceTree = "<group>"; };
 		B1E1ACFA2136D9A400228874 /* TrailSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E1ACFD2136D9A400228874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E1ACFF2136D9A400228874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,15 +161,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B1D7217C213AF375000A8612 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				B1D7217A213A22D5000A8612 /* RESTSession.swift */,
-				B160A98D2148151C007D8EF5 /* RequestFactory.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		B1E1ACF12136D9A400228874 = {
 			isa = PBXGroup;
 			children = (
@@ -201,7 +188,6 @@
 			children = (
 				B171420F214D5D4A0020E6A4 /* Views */,
 				B160A98A2148115F007D8EF5 /* ViewModels */,
-				B1D7217C213AF375000A8612 /* Networking */,
 				B1D72177213A1D7D000A8612 /* Models */,
 				B1E1ACFD2136D9A400228874 /* AppDelegate.swift */,
 				B1E1AD012136D9A400228874 /* Main.storyboard */,
@@ -456,8 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B160A98E2148151C007D8EF5 /* RequestFactory.swift in Sources */,
-				B1D7217B213A22D5000A8612 /* RESTSession.swift in Sources */,
 				B1714217214D5E240020E6A4 /* TrailCell.swift in Sources */,
 				B1E1AD002136D9A400228874 /* ViewController.swift in Sources */,
 				B160A98C21481172007D8EF5 /* TrailViewModel.swift in Sources */,

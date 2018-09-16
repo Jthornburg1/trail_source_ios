@@ -41,39 +41,12 @@ class ViewController: UIViewController {
         searchController?.hidesNavigationBarDuringPresentation = false
         
         tableView.tableFooterView = UIView()
-        getTrails { (success, error) in
-            
-        }
     }
-    
-    func getTrails(completion: @escaping (Bool, Error?) -> ()) {
-        let session = URLSession.shared
-        guard let url = URL(string: "https://trailapi-trailapi.p.mashape.com/?lat=37.9864932173393&lon=-78.507843337968") else {return}
-        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        request.addValue(Constants.trailsDebugKey, forHTTPHeaderField: Constants.requestHeaderKey)
-        request.httpMethod = "GET"
-        session.dataTask(with: request) { (data, response, err) in
-            do {
-                let apiResponse = try JSONDecoder().decode(TrailApiResponse.self, from: data!)
-                if let trails = apiResponse.places {
-                    print(trails)
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            print(response)
-            print(err?.localizedDescription)
-            completion(true,err)
-        }.resume()
-    }
-
 }
 
 extension ViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
-        trailViewModel?.newCoordinates(lat: place.coordinate.latitude, long: place.coordinate.longitude, completion: { (success, error) in
-            
-        })
+        
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error) {
@@ -98,10 +71,9 @@ extension ViewController: CLLocationManagerDelegate {
                 currentLocation = location
                 trailViewModel = TrailViewModel(with: currentLocation!.coordinate.latitude, long: currentLocation!.coordinate.longitude)
                 trailViewModel?.getTrails(completion: { (success, error) in
-                    if success {
-                        print(self.trailViewModel!.trails.count)
-                    }
+                    
                 })
+                
             }
             let latDifference = currentLocation!.coordinate.latitude - location.coordinate.latitude
             let longDifference = currentLocation!.coordinate.longitude - location.coordinate.longitude
