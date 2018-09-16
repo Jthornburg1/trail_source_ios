@@ -39,6 +39,7 @@ struct RequestFactory {
             url = url!.appendingPathComponent(query)
         }
         var request = URLRequest(url: url!)
+        request.httpMethod = httpMethod.rawValue
         if let headers = headers {
             for (k,v) in headers {
                 request.setValue(v, forHTTPHeaderField: k)
