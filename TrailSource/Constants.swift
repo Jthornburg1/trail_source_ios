@@ -19,4 +19,8 @@ struct Constants {
         public static let trailsByCoordinate = "https://trailapi-trailapi.p.mashape.com/"
         public static let coordinateQuery = "?lat=%@&lon=%@"
     }
+    
+    public struct cellReuseIdsAndNibNames {
+        public static let trailCell = "TrailCell"
+    }
 }

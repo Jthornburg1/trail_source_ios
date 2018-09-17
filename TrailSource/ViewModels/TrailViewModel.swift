@@ -27,19 +27,15 @@ class TrailViewModel {
         URLSession.shared.dataTask(with: request) { [weak self] (data, resposne, error) in
             guard let dta = data else { return completion(false, error) }
             do {
-                guard let json = try JSONSerialization.jsonObject(with: dta, options: .mutableLeaves) as? [String:Any] else { return completion(false, error) }
-                guard let trails = json["places"] as? [[String:Any]] else { return completion(false,error) }
-                self?.trails.removeAll()
-                for trail in trails {
-                    let newTrail = Trail(dictionary: trail)
-                    self?.trails.append(newTrail)
-                }
+                
+                let apiResponse = try JSONDecoder().decode(TrailApiResponse.self, from: dta)
+                self?.trails = apiResponse.places
                 DispatchQueue.main.async(execute: {
-                    print(self!.trails)
-                    completion(true, nil)
+                    completion(true, error)
                 })
+                
             } catch let jsonError {
-                print(jsonError.localizedDescription)
+                print(jsonError)
             }
         }.resume()
     }

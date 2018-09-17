@@ -8,9 +8,15 @@
 
 import Foundation
 
-struct Trail {
+struct TrailApiResponse: Decodable {
     
-    let id: Int
+    let places: [Trail]
+    
+}
+
+struct Trail: Decodable {
+    
+    let id: Int?
     let city: String?
     let region: String?
     let lat: Double
@@ -19,17 +25,15 @@ struct Trail {
     let difficulty: String?
     let rating: Double?
     let thumbnail: String?
+    let activities: [Activity]?
+}
+
+struct Activity: Decodable {
     
-    init(dictionary: [String:Any]) {
-        id = dictionary["id"] as? Int ?? -1
-        city = dictionary["city"] as? String ?? ""
-        region = dictionary["region"] as? String ?? ""
-        lat = dictionary["lat"] as? Double ?? -1.0
-        lon = dictionary["lon"] as? Double ?? -1.0
-        name = dictionary["name"] as? String ?? ""
-        difficulty = dictionary["difficulty"] as? String ?? ""
-        rating = dictionary["rating"] as? Double ?? -1.0
-        thumbnail = dictionary["thumbnail"] as? String ?? ""
-    }
+    let activity_type_name: String?
+    let thumbnail: String?
+    let length: Int?
+    let rating: Double?
+    let description: String?
     
 }

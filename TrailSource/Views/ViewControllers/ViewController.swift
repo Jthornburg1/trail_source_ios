@@ -41,6 +41,9 @@ class ViewController: UIViewController {
         searchController?.hidesNavigationBarDuringPresentation = false
         
         tableView.tableFooterView = UIView()
+        
+        let cellNib = UINib(nibName: Constants.cellReuseIdsAndNibNames.trailCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: Constants.cellReuseIdsAndNibNames.trailCell)
     }
 }
 
@@ -71,7 +74,9 @@ extension ViewController: CLLocationManagerDelegate {
                 currentLocation = location
                 trailViewModel = TrailViewModel(with: currentLocation!.coordinate.latitude, long: currentLocation!.coordinate.longitude)
                 trailViewModel?.getTrails(completion: { (success, error) in
-                    
+                    if success {
+                        self.tableView.reloadData()
+                    }
                 })
                 
             }
@@ -100,11 +105,23 @@ extension ViewController: CLLocationManagerDelegate {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        guard let viewModel = trailViewModel else { return 0 }
+        return viewModel.trails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdsAndNibNames.trailCell) as? TrailCell else { return UITableViewCell() }
+        guard let viewModel = trailViewModel else { return UITableViewCell() }
+        
+        cell.trailNameLabel.text = viewModel.trails[indexPath.row].name
+        cell.cityLabel.text = viewModel.trails[indexPath.row].city
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
