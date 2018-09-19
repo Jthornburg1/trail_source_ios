@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     var searchController: UISearchController?
     var locationManager = CLLocationManager()
     var resultView: UITextView?
-    var isSearchingByGoogleQuery = false
     var currentLocation: CLLocation?
     var trailViewModel: TrailViewModel?
 
@@ -44,18 +43,28 @@ class ViewController: UIViewController {
         
         let cellNib = UINib(nibName: Constants.cellReuseIdsAndNibNames.trailCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: Constants.cellReuseIdsAndNibNames.trailCell)
+        
+        searchController?.searchBar.delegate = self
     }
 }
 
 extension ViewController: GMSAutocompleteResultsViewControllerDelegate {
+    
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
-        
+        guard let viewModel = trailViewModel else { return }
+        self.searchController?.searchBar.text = place.name
+        viewModel.changeCoordinate(lat: place.coordinate.latitude, long: place.coordinate.longitude) { (success, error) in
+            if success {
+                self.locationManager.stopUpdatingLocation()
+                self.resultsViewController?.dismiss(animated: true, completion: nil)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error) {
         
     }
-    
 }
 
 extension ViewController: CLLocationManagerDelegate {
@@ -76,6 +85,7 @@ extension ViewController: CLLocationManagerDelegate {
                 trailViewModel?.getTrails(completion: { (success, error) in
                     if success {
                         self.tableView.reloadData()
+                        self.locationManager.stopUpdatingLocation()
                     }
                 })
                 
@@ -122,6 +132,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        currentLocation = nil
+        locationManager.startUpdatingLocation()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            if let viewModel = trailViewModel {
+                viewModel.clearTrailArray()
+                tableView.reloadData()
+            }
+        }
     }
 }
 

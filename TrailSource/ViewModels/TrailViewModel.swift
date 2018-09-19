@@ -48,4 +48,8 @@ class TrailViewModel {
             })
         }
     }
+    
+    func clearTrailArray() {
+        trails.removeAll()
+    }
 }
