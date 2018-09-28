@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A55C355DCD8770E712961F5F /* Pods_TrailSourceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A194BC662B4B13593A2BAC5 /* Pods_TrailSourceUITests.framework */; };
 		B11D2DF2215037520076EE19 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11D2DF1215037520076EE19 /* AppSession.swift */; };
+		B15627CF215D6F61004C47FF /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15627CE215D6F61004C47FF /* RequestFactory.swift */; };
 		B160A98C21481172007D8EF5 /* TrailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160A98B21481172007D8EF5 /* TrailViewModel.swift */; };
 		B1714217214D5E240020E6A4 /* TrailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1714215214D5E240020E6A4 /* TrailCell.swift */; };
 		B1714218214D5E240020E6A4 /* TrailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1714216214D5E240020E6A4 /* TrailCell.xib */; };
@@ -52,6 +53,7 @@
 		86FFCC6570CB460CE9B6D191 /* Pods-TrailSource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailSource.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrailSource/Pods-TrailSource.debug.xcconfig"; sourceTree = "<group>"; };
 		A1D511B0310AFA1F0F06C545 /* Pods-TrailSourceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailSourceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailSourceTests/Pods-TrailSourceTests.release.xcconfig"; sourceTree = "<group>"; };
 		B11D2DF1215037520076EE19 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
+		B15627CE215D6F61004C47FF /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		B160A98B21481172007D8EF5 /* TrailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailViewModel.swift; sourceTree = "<group>"; };
 		B1714215214D5E240020E6A4 /* TrailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailCell.swift; sourceTree = "<group>"; };
 		B1714216214D5E240020E6A4 /* TrailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailCell.xib; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				B11D2DF1215037520076EE19 /* AppSession.swift */,
+				B15627CE215D6F61004C47FF /* RequestFactory.swift */,
 			);
 			name = Networking;
 			path = "New Group";
@@ -457,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15627CF215D6F61004C47FF /* RequestFactory.swift in Sources */,
 				B11D2DF2215037520076EE19 /* AppSession.swift in Sources */,
 				B1714217214D5E240020E6A4 /* TrailCell.swift in Sources */,
 				B1E1AD002136D9A400228874 /* ViewController.swift in Sources */,

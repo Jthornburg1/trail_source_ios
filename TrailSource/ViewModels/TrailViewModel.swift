@@ -18,7 +18,7 @@ class TrailViewModel {
         self.lat = lat; self.long = long
     }
     
-    func getTrails(completion: @escaping (Bool, Error?) -> ()) {
+    func getTails(completion: @escaping (Bool, Error?) -> ()) {
         let query = String(format: Constants.endpoints.coordinateQuery, String(describing: lat!), String(describing: long!))
         guard let url = URL(string: Constants.endpoints.trailsByCoordinate + query) else { return completion(false, nil) }
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -38,6 +38,27 @@ class TrailViewModel {
                 print(jsonError)
             }
         }.resume()
+    }
+    
+    func getTrails(completion: @escaping (Bool, Error?) -> ()) {
+        let query = String(format: Constants.endpoints.coordinateQuery, String(describing: lat!), String(describing: long!))
+        guard let url = URL(string: Constants.endpoints.trailsByCoordinate + query) else { return completion(false, nil) }
+        let request = RequestFactory.createRequest(url: url, method: .get, parameters: [.xMashapeKey:Constants.trailsDebugKey])
+        let appSession = AppSession(request: request)
+        appSession.sendRequest { (data, error) in
+            guard let data = data, error == nil else { return completion(false, error) }
+            
+            do {
+                let apiResponse = try JSONDecoder().decode(TrailApiResponse.self, from: data)
+                self.trails = apiResponse.places
+                DispatchQueue.main.async(execute: {
+                    completion(true, nil)
+                })
+            } catch let decodeError {
+                print(decodeError.localizedDescription)
+                completion(false, decodeError)
+            }
+        }
     }
     
     func changeCoordinate(lat: Double, long: Double, completion: @escaping (Bool, Error?) -> ()) {

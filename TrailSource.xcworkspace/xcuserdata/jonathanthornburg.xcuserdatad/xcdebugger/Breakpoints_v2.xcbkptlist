@@ -57,14 +57,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrailSource/Views/ViewControllers/ViewController.swift"
-            timestampString = "559062486.336805"
+            filePath = "TrailSource/ViewModels/TrailViewModel.swift"
+            timestampString = "559834184.739751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "resultsController(_:didAutocompleteWith:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getTails(completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrailSource.TrailViewModel.getTails(completion: (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TrailSource"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathanthornburg/TrailSource/TrailSource/TrailSource/ViewModels/TrailViewModel.swift"
+                  timestampString = "559834184.942793"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "976">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TrailSource.TrailViewModel.getTails(completion: (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TrailSource"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathanthornburg/TrailSource/TrailSource/TrailSource/ViewModels/TrailViewModel.swift"
+                  timestampString = "559834184.946734"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
