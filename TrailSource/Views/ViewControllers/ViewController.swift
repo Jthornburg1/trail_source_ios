@@ -54,9 +54,8 @@ extension ViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
         guard let viewModel = trailViewModel else { return }
         searchController?.searchBar.text = place.name
-        resultsController.dismiss(animated: true) {
-            SVProgressHUD.show(withStatus: "Loading...")
-        }
+        SVProgressHUD.show(withStatus: "Loading...")
+        resultsController.dismiss(animated: true)
         viewModel.changeCoordinate(lat: place.coordinate.latitude, long: place.coordinate.longitude) { (success, error) in
             if success {
                 self.locationManager.stopUpdatingLocation()
@@ -90,9 +89,10 @@ extension ViewController: CLLocationManagerDelegate {
                 SVProgressHUD.show(withStatus: "Loading...")
                 trailViewModel?.getTrails(completion: { (success, error) in
                     if success {
-                        SVProgressHUD.dismiss()
-                        self.tableView.reloadData()
-                        self.locationManager.stopUpdatingLocation()
+                        SVProgressHUD.dismiss(completion: {
+                            self.tableView.reloadData()
+                            self.locationManager.stopUpdatingLocation()
+                        })
                     }
                 })
                 
@@ -122,6 +122,7 @@ extension ViewController: CLLocationManagerDelegate {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        SVProgressHUD.dismiss()
         guard let viewModel = trailViewModel else { return 0 }
         return viewModel.trails.count
     }
