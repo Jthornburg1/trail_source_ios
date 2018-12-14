@@ -261,6 +261,7 @@
 				B1E1ACF72136D9A400228874 /* Frameworks */,
 				B1E1ACF82136D9A400228874 /* Resources */,
 				5725F550C5231DF075BD64EE /* [CP] Copy Pods Resources */,
+				7B5C6DF838479BBC60BD67B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -397,6 +398,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrailSource/Pods-TrailSource-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B5C6DF838479BBC60BD67B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TrailSource/Pods-TrailSource-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrailSource/Pods-TrailSource-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		867A17EB516F3E3FFE8F6295 /* [CP] Check Pods Manifest.lock */ = {

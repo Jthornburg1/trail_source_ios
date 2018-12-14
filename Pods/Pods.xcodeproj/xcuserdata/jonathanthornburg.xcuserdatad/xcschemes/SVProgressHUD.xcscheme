@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9C4AED8E7F0E8047550BDB01102B0913"
-               BlueprintName = "KRActivityIndicatorView"
+               BlueprintIdentifier = "1A524E6FFD6188EE9137713EFAABF47D"
+               BlueprintName = "SVProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "KRActivityIndicatorView.framework">
+               BuildableName = "SVProgressHUD.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

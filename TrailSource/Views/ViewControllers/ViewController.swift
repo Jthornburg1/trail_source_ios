@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -52,12 +53,16 @@ extension ViewController: GMSAutocompleteResultsViewControllerDelegate {
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
         guard let viewModel = trailViewModel else { return }
-        self.searchController?.searchBar.text = place.name
+        searchController?.searchBar.text = place.name
+        resultsController.dismiss(animated: true) {
+            SVProgressHUD.show(withStatus: "Loading...")
+        }
         viewModel.changeCoordinate(lat: place.coordinate.latitude, long: place.coordinate.longitude) { (success, error) in
             if success {
                 self.locationManager.stopUpdatingLocation()
-                self.resultsViewController?.dismiss(animated: true, completion: nil)
-                self.tableView.reloadData()
+                SVProgressHUD.dismiss(completion: {
+                    self.tableView.reloadData()
+                })
             }
         }
     }
@@ -82,8 +87,10 @@ extension ViewController: CLLocationManagerDelegate {
             if currentLocation == nil {
                 currentLocation = location
                 trailViewModel = TrailViewModel(with: currentLocation!.coordinate.latitude, long: currentLocation!.coordinate.longitude)
+                SVProgressHUD.show(withStatus: "Loading...")
                 trailViewModel?.getTrails(completion: { (success, error) in
                     if success {
+                        SVProgressHUD.dismiss()
                         self.tableView.reloadData()
                         self.locationManager.stopUpdatingLocation()
                     }
@@ -123,10 +130,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdsAndNibNames.trailCell) as? TrailCell else { return UITableViewCell() }
         guard let viewModel = trailViewModel else { return UITableViewCell() }
-        
         cell.trailNameLabel.text = viewModel.trails[indexPath.row].name
-        cell.cityLabel.text = viewModel.trails[indexPath.row].city
-        
+        cell.cityLabel.text = viewModel.trails[indexPath.row].location
+        if let currentLocation = currentLocation {
+            cell.distanceLabel.text = String(format: "%@ mi.", viewModel.getDistanceFromTrail(at: indexPath.row, with: (currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)))
+        }
         return cell
     }
     

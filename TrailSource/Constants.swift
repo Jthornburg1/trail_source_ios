@@ -11,13 +11,12 @@ import Foundation
 struct Constants {
     
     public static let googleKey = "AIzaSyAnZCCdKFXkKMIseBNdRyA84pZAZg_lP3k"
-    public static let trailsProdKey = "iyYnWzwQfgmshFvRxdrIIVrmUzT9p1RXWvSjsnVjcTqQTigkyp"
-    public static let trailsDebugKey = "TCC6fBQ5oKmshU5SEQXCiEXKvESBp1Z8CcGjsn14vW0Zm5XxNo"
-    public static let requestHeaderKey = "X-Mashape-Key"
+    public static let trailsDebugKey = "7137887-e393547d6311cdca70e38f8564e8701b"
+    public static let requestHeaderKey = "key"
     
     public struct endpoints {
-        public static let trailsByCoordinate = "https://trailapi-trailapi.p.mashape.com/"
-        public static let coordinateQuery = "?lat=%@&lon=%@"
+        public static let trailsByCoordinate = "https://www.mtbproject.com/data/get-trails"
+        public static let coordinateQuery = "?lat=%@&lon=%@&key=\(Constants.trailsDebugKey)"
     }
     
     public struct cellReuseIdsAndNibNames {

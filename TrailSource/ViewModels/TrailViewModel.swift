@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class TrailViewModel {
     
@@ -29,7 +30,7 @@ class TrailViewModel {
             do {
                 
                 let apiResponse = try JSONDecoder().decode(TrailApiResponse.self, from: dta)
-                self?.trails = apiResponse.places
+                self?.trails = apiResponse.trails
                 DispatchQueue.main.async(execute: {
                     completion(true, error)
                 })
@@ -43,14 +44,13 @@ class TrailViewModel {
     func getTrails(completion: @escaping (Bool, Error?) -> ()) {
         let query = String(format: Constants.endpoints.coordinateQuery, String(describing: lat!), String(describing: long!))
         guard let url = URL(string: Constants.endpoints.trailsByCoordinate + query) else { return completion(false, nil) }
-        let request = RequestFactory.createRequest(url: url, method: .get, parameters: [.xMashapeKey:Constants.trailsDebugKey])
+        let request = RequestFactory.createRequest(url: url, method: .get, parameters: [:])
         let appSession = AppSession(request: request)
         appSession.sendRequest { (data, error) in
             guard let data = data, error == nil else { return completion(false, error) }
-            
             do {
                 let apiResponse = try JSONDecoder().decode(TrailApiResponse.self, from: data)
-                self.trails = apiResponse.places
+                self.trails = apiResponse.trails
                 DispatchQueue.main.async(execute: {
                     completion(true, nil)
                 })
@@ -72,5 +72,20 @@ class TrailViewModel {
     
     func clearTrailArray() {
         trails.removeAll()
+    }
+    
+    func getDistanceFromTrail(at index: Int, with currentCoords: (Double,Double)) -> String {
+        let trail = trails[index]
+        
+        let coord1 = CLLocation(latitude: trail.latitude, longitude: trail.longitude)
+        let coord2 = CLLocation(latitude: currentCoords.0, longitude: currentCoords.1)
+        
+        let metersDistance = coord1.distance(from: coord2)
+        
+        let milesDistance = Double(metersDistance) / 1609.0
+        
+        let truncatedDistance = Double(round(10 * milesDistance) / 10)
+        
+        return String(describing: truncatedDistance)
     }
 }

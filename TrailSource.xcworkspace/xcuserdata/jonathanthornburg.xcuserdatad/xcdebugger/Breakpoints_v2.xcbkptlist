@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrailSource/ViewModels/TrailViewModel.swift"
-            timestampString = "559834184.739751"
+            timestampString = "566497018.8556629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "getTails(completion:)"
             landmarkType = "7">
             <Locations>
@@ -74,12 +74,12 @@
                   moduleName = "TrailSource"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathanthornburg/TrailSource/TrailSource/TrailSource/ViewModels/TrailViewModel.swift"
-                  timestampString = "559834184.942793"
+                  timestampString = "566497019.085127"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "976">
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "972">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -89,14 +89,30 @@
                   moduleName = "TrailSource"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathanthornburg/TrailSource/TrailSource/TrailSource/ViewModels/TrailViewModel.swift"
-                  timestampString = "559834184.946734"
+                  timestampString = "566497019.089908"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
                   offsetFromSymbolStart = "72">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrailSource/ViewModels/TrailViewModel.swift"
+            timestampString = "566497018.856011"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "getTrails(completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

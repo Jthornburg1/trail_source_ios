@@ -10,30 +10,27 @@ import Foundation
 
 struct TrailApiResponse: Decodable {
     
-    let places: [Trail]
+    let trails: [Trail]
     
 }
 
 struct Trail: Decodable {
     
     let id: Int?
-    let city: String?
-    let region: String?
-    let lat: Double
-    let lon: Double
+    let location: String?
+    let latitude: Double
+    let longitude: Double
     let name: String
     let difficulty: String?
-    let rating: Double?
+    let starVotes: Int?
     let thumbnail: String?
-    let activities: [Activity]?
-}
-
-struct Activity: Decodable {
-    
-    let activity_type_name: String?
-    let thumbnail: String?
+    let high: Int?
+    let low: Int?
+    let stars: Int?
     let length: Int?
-    let rating: Double?
-    let description: String?
-    
+    let ascent: Int?
+    let descent: Int?
+    let url: String?
+    let summary: String?
+    let type: String?
 }

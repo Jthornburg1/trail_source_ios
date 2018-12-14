@@ -7,6 +7,7 @@ target 'TrailSource' do
 
   # Pods for TrailSource
   pod 'GooglePlaces'
+  pod 'SVProgressHUD'
 
   target 'TrailSourceTests' do
     inherit! :search_paths
