@@ -117,6 +117,30 @@ extension ViewController: CLLocationManagerDelegate {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+
+    func presentMappingAction(to trail: Trail?) {
+
+        guard let trail = trail else { return }
+        let actionSheet = UIAlertController(title: NSLocalizedString("Map to trailhead?", comment: ""), message: NSLocalizedString("Which mapping app do you prefer?", comment: ""), preferredStyle: .actionSheet)
+
+        let appleAction = UIAlertAction(title: "Apple Maps", style: .default) { (_) in
+            let appleProvider = AppleMapper()
+            self.mapTo(trail: trail, with: appleProvider)
+        }
+        let googleAction = UIAlertAction(title: "Google Maps", style: .default) { (_) in
+            let googleProvider = GoogleMapper()
+            self.mapTo(trail: trail, with: googleProvider)
+        }
+        actionSheet.addAction(appleAction)
+        actionSheet.addAction(googleAction)
+        present(actionSheet, animated: true)
+    }
+
+    func mapTo(trail: Trail, with provider: MappingProvider) {
+        let coordinate = CLLocationCoordinate2D(latitude: trail.latitude, longitude: trail.longitude)
+        let name: String = trail.name
+        provider.openMapAppWith(coordinate: coordinate, and: name)
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -141,6 +165,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presentMappingAction(to: trailViewModel?.trails[indexPath.row])
     }
 }
 

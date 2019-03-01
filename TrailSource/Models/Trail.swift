@@ -21,16 +21,16 @@ struct Trail: Decodable {
     let latitude: Double
     let longitude: Double
     let name: String
-//    let difficulty: String?
-//    let starVotes: Int?
-//    let thumbnail: String?
-//    let high: Int?
-//    let low: Int?
-//    let stars: Int?
-//    let length: Int?
-//    let ascent: Int?
-//    let descent: Int?
-//    let url: String?
-//    let summary: String?
-//    let type: String?
+    let difficulty: String?
+    let starVotes: Int?
+    let thumbnail: String?
+    let high: Int?
+    let low: Int?
+    let stars: Double?
+    let length: Double?
+    let ascent: Double?
+    let descent: Double?
+    let url: String?
+    let summary: String?
+    let type: String?
 }

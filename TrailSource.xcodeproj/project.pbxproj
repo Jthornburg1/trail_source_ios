@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A55C355DCD8770E712961F5F /* Pods_TrailSourceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A194BC662B4B13593A2BAC5 /* Pods_TrailSourceUITests.framework */; };
+		B11BA5A42229ABDB00C9ADA1 /* MappingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BA5A32229ABDB00C9ADA1 /* MappingProvider.swift */; };
+		B11BA5A72229ACE000C9ADA1 /* AppleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BA5A62229ACE000C9ADA1 /* AppleMapper.swift */; };
+		B11BA5A92229AD2B00C9ADA1 /* GoogleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BA5A82229AD2B00C9ADA1 /* GoogleMapper.swift */; };
 		B11D2DF2215037520076EE19 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11D2DF1215037520076EE19 /* AppSession.swift */; };
 		B15627CF215D6F61004C47FF /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15627CE215D6F61004C47FF /* RequestFactory.swift */; };
 		B160A98C21481172007D8EF5 /* TrailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160A98B21481172007D8EF5 /* TrailViewModel.swift */; };
@@ -52,6 +55,9 @@
 		7A194BC662B4B13593A2BAC5 /* Pods_TrailSourceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailSourceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FFCC6570CB460CE9B6D191 /* Pods-TrailSource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailSource.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrailSource/Pods-TrailSource.debug.xcconfig"; sourceTree = "<group>"; };
 		A1D511B0310AFA1F0F06C545 /* Pods-TrailSourceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailSourceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailSourceTests/Pods-TrailSourceTests.release.xcconfig"; sourceTree = "<group>"; };
+		B11BA5A32229ABDB00C9ADA1 /* MappingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingProvider.swift; sourceTree = "<group>"; };
+		B11BA5A62229ACE000C9ADA1 /* AppleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapper.swift; sourceTree = "<group>"; };
+		B11BA5A82229AD2B00C9ADA1 /* GoogleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapper.swift; sourceTree = "<group>"; };
 		B11D2DF1215037520076EE19 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
 		B15627CE215D6F61004C47FF /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		B160A98B21481172007D8EF5 /* TrailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +121,23 @@
 				7A194BC662B4B13593A2BAC5 /* Pods_TrailSourceUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B11BA5A22229AB9A00C9ADA1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B11BA5A32229ABDB00C9ADA1 /* MappingProvider.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B11BA5A52229ACB700C9ADA1 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				B11BA5A62229ACE000C9ADA1 /* AppleMapper.swift */,
+				B11BA5A82229AD2B00C9ADA1 /* GoogleMapper.swift */,
+			);
+			path = Mapping;
 			sourceTree = "<group>";
 		};
 		B11D2DF02150366A0076EE19 /* Networking */ = {
@@ -202,6 +225,8 @@
 		B1E1ACFC2136D9A400228874 /* TrailSource */ = {
 			isa = PBXGroup;
 			children = (
+				B11BA5A52229ACB700C9ADA1 /* Mapping */,
+				B11BA5A22229AB9A00C9ADA1 /* Protocols */,
 				B11D2DF02150366A0076EE19 /* Networking */,
 				B171420F214D5D4A0020E6A4 /* Views */,
 				B160A98A2148115F007D8EF5 /* ViewModels */,
@@ -482,12 +507,15 @@
 				B15627CF215D6F61004C47FF /* RequestFactory.swift in Sources */,
 				B11D2DF2215037520076EE19 /* AppSession.swift in Sources */,
 				B1714217214D5E240020E6A4 /* TrailCell.swift in Sources */,
+				B11BA5A42229ABDB00C9ADA1 /* MappingProvider.swift in Sources */,
 				B1E1AD002136D9A400228874 /* ViewController.swift in Sources */,
 				B160A98C21481172007D8EF5 /* TrailViewModel.swift in Sources */,
+				B11BA5A72229ACE000C9ADA1 /* AppleMapper.swift in Sources */,
 				B1D72179213A1DA5000A8612 /* Trail.swift in Sources */,
 				B1E1AD062136D9A400228874 /* TrailSource.xcdatamodeld in Sources */,
 				B1E1ACFE2136D9A400228874 /* AppDelegate.swift in Sources */,
 				B1E1AD2F2136DA4400228874 /* Constants.swift in Sources */,
+				B11BA5A92229AD2B00C9ADA1 /* GoogleMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
